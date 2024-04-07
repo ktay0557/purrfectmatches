@@ -24,3 +24,6 @@ class CommentSerializer(serializers.ModelSerializer):
             'updated_at',
             'content',
         ]
+
+class CommentDetailSerializer(CommentSerializer):
+    advert = serializers.ReadOnlyField(source='advert.id')
