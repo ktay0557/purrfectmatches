@@ -37,7 +37,7 @@ class AdvertSerializer(serializers.ModelSerializer):
             'breed',
             'sex',
             'children',
-            'other_pets',
+            'other_animals',
             'content',
             'image',
             'is_owner'
