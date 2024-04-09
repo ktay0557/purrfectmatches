@@ -3,18 +3,20 @@ from django.contrib.auth.models import User
 from adverts.models import Adverts
 
 
-class Comment(models.Model):
+class Adoption(models.Model):
     """
-    Comment model, related to User and Adverts
+    Adoption model, related to User and Adverts
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     advert = models.ForeignKey(Adverts, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    mobile = models.CharField(max_length=11)
     content = models.TextField()
 
     class Meta:
         ordering = ['-created_at']
 
     def __str__(self):
-        return self.content
+        return f'{self.owner} {self.advert}'

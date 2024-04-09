@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'adverts',
     'comments',
     'likes',
+    'about',
+    'adoptions',
 ]
 
 MIDDLEWARE = [
