@@ -9,11 +9,11 @@ class AboutSerializer(serializers.ModelSerializer):
             )
         if value.image.width > 700:
             raise serializers.ValidationError(
-                "Image width is larger than 500px"
+                "Image width is larger than 700px"
             )
         if value.image.height > 800:
             raise serializers.ValidationError(
-                "Image height is larger than 600px"
+                "Image height is larger than 800px"
             )
         return value
 
