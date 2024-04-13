@@ -1,4 +1,5 @@
 from rest_framework import generics, permissions
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Adoption
 from .serializers import AdoptionSerializer
 from purrfectmatches.permissions import IsOwnerOrReadOnly, LoggedInCreatePermissions
@@ -7,6 +8,13 @@ from purrfectmatches.permissions import IsOwnerOrReadOnly, LoggedInCreatePermiss
 class AdoptionList(generics.ListCreateAPIView):
     serializer_class = AdoptionSerializer
     permission_classes = [LoggedInCreatePermissions]
+    filter_backends = [
+        DjangoFilterBackend,
+    ]
+    filterset_fields = [
+        'advert_id',
+        'owner__profile',
+    ]
 
     def get_queryset(self):
         user = self.request.user

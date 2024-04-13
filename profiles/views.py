@@ -1,4 +1,5 @@
 from rest_framework import generics
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Profile
 from .serializers import ProfileSerializer
 from purrfectmatches.permissions import IsOwnerOrReadOnly
@@ -10,6 +11,10 @@ class ProfileList(generics.ListAPIView):
     """
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all()
+    filter_backends = [
+        DjangoFilterBackend,
+    ]
+    filterset_fields = ['id', 'owner']
 
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
