@@ -59,9 +59,12 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+DEBUG = 'DEBUG' in os.environ
 
-ALLOWED_HOSTS = ['8000-ktay0557-purrfectmatche-73c3r4ie949.ws-eu110.gitpod.io', 'purrfect-matches-06bb403f2068.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-ktay0557-purrfectmatche-73c3r4ie949.ws-eu110.gitpod.io', 
+    os.environ.get('ALLOWED_HOST')
+]
 
 
 # Application definition
@@ -106,14 +109,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-if 'CLIENT_ORIGIN' in os.environ:
-    CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN')
-    ]
-else:
-    CORS_ALLOWED_ORIGINS_REGEXES = [
-        r"^https://.*\.gitpod\.io$",
-    ]
+CORS_ALLOWED_ORIGINS = [
+    os.environ.get('CLIENT_ORIGIN')
+]
 
 CORS_ALLOW_CREDENTIALS = True
 
