@@ -8,6 +8,8 @@ class AdvertSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     like_id = serializers.SerializerMethodField()
     adoption_id = serializers.SerializerMethodField()
+    likes_count = serializers.ReadOnlyField()
+    comments_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
         if value.size > 1024 * 1024 * 2: # 2MB in bytes
@@ -65,4 +67,6 @@ class AdvertSerializer(serializers.ModelSerializer):
             'is_owner',
             'like_id',
             'adoption_id',
+            'likes_count',
+            'comments_count',
         ]
