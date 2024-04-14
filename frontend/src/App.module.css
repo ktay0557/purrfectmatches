@@ -1,6 +1,6 @@
 .App {
     font-family: "Poppins", sans-serif;
-    background-color: #e0dbdb;
+    background-color: #f8f8f8;
     min-height: 100vh;
 }
 
@@ -8,49 +8,26 @@
     padding-top: 81px;
 }
 
-.Content {
-    background-color: #bdbdc0;
-    padding: 10px;
-    border-radius: 2px;
-    border: 1px solid #e2c0f8;
-}
-
-.FillerImage {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-.Image {
-    max-height: 40vh;
-    max-width: 100%;
-    object-fit: contain;
-}
-
 * {
     box-sizing: border-box;
 }
 
 a {
-    color: #18181b;
+    color: #9292a1;
 }
 
 a:hover {
     text-decoration: none;
-    color: #7925ad;
+    color: #AD35F7;
 }
 
 a:hover i {
-    color: #7925ad;
+    color: #AD35F7;
     transition: color ease-in-out 0.3s;
 }
 
-input[type="file"] {
-    display: none;
-}
-
 i {
-    color: #342646;
+    color: #9292a1;
     font-size: 1.6rem;
     padding: 6px;
     vertical-align: middle;
@@ -59,24 +36,5 @@ i {
 i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
-    color: #7925ad;
-}
-
-figure {
-    text-align: center;
-    display: inline-block;
-}
-
-/* scroll bar */
-*::-webkit-scrollbar {
-    width: 7px;
-}
-*::-webkit-scrollbar-track {
-    background: #9292a1;
-}
-*::-webkit-scrollbar-thumb {
-    background: #888;
-}
-*::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    color: #AD35F7;
 }
