@@ -1,10 +1,9 @@
-import Button from "react-bootstrap/Button";
-import "./App.css";
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Button variant="primary">Primary</Button>
+      <h1>Welcome to Purrfect Matches!</h1>
     </div>
   );
 }
