@@ -1,5 +1,6 @@
 from django.db.models import Count
 from rest_framework import generics, permissions, filters
+from rest_framework.exceptions import PermissionDenied
 from purrfectmatches.permissions import IsStaffOrReadOnly
 from .models import Adverts
 from .serializers import AdvertSerializer
@@ -7,7 +8,7 @@ from .serializers import AdvertSerializer
 
 class AdvertList(generics.ListCreateAPIView):
     serializer_class = AdvertSerializer
-    permission_classes = [IsStaffOrReadOnly]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Adverts.objects.annotate(
         likes_count=Count('likes', distinct=True), 
         comments_count=Count('comment', distinct=True)
@@ -29,6 +30,10 @@ class AdvertList(generics.ListCreateAPIView):
     ]
 
     def perform_create(self, serializer):
+        if not self.request.user.is_staff:
+            raise PermissionDenied(
+                "You do not have access"
+            )
         serializer.save(owner=self.request.user)
         
 class AdvertDetail(generics.RetrieveUpdateDestroyAPIView):
