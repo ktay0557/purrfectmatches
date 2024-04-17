@@ -21,7 +21,6 @@ class AdvertList(generics.ListCreateAPIView):
     ]
     filterset_fields = [
         'likes__owner__profile',
-        'adoptions__owner',
         'owner__profile',
     ]
     search_fields = [
