@@ -25,9 +25,12 @@ class AdvertList(generics.ListCreateAPIView):
     ]
     search_fields = [
         'title',
+        'name',
         'age',
         'breed',
         'sex',
+        'children',
+        'other_animals',
     ]
     ordering_fields = [
         'likes_count',
