@@ -10,3 +10,6 @@ class CurrentUserSerializer(UserDetailsSerializer):
         fields = UserDetailsSerializer.Meta.fields + (
             'profile_id', 'profile_image'
         )
+
+    def get_is_staff_user(self, obj):
+        return obj.is_staff  # this will return true for self.is_staff user
