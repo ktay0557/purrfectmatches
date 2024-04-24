@@ -3,6 +3,7 @@ from .models import Adoption
 from adverts.models import Adverts
 
 class AdoptionSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
     advert_id = serializers.PrimaryKeyRelatedField(queryset=Adverts.objects.all(), write_only=True)
 
     def create(self, validated_data):
