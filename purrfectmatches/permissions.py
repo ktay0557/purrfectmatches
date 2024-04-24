@@ -12,9 +12,3 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
         return obj.owner == request.user
-
-class LoggedInCreatePermissions(permissions.BasePermission):
-    def has_permission(self, request, view):
-        if request.method == 'POST':
-            return request.user and request.user.is_authenticated
-        return request.user and request.user.is_staff
