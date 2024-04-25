@@ -13,13 +13,13 @@ class AdoptionList(generics.ListCreateAPIView):
         DjangoFilterBackend,
     ]
     filterset_fields = [
-        'advert_id',
         'owner__profile',
     ]
     search_fields = [
         'name',
         'email',
         'mobile',
+        'advert_id',
     ]
 
     def get_queryset(self):
