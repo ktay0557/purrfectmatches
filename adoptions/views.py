@@ -8,6 +8,7 @@ from purrfectmatches.permissions import IsOwnerOrReadOnly
 class AdoptionList(generics.ListCreateAPIView):
     serializer_class = AdoptionSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = Adoption.objects.all()
     filter_backends = [
         filters.SearchFilter,
         DjangoFilterBackend,
@@ -21,12 +22,6 @@ class AdoptionList(generics.ListCreateAPIView):
         'mobile',
         'advert_id',
     ]
-
-    def get_queryset(self):
-        user = self.request.user
-        if user.is_staff:
-            return Adoption.objects.all()
-        return Adoption.objects.none()
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
