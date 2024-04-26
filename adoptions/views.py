@@ -11,10 +11,6 @@ class AdoptionList(generics.ListCreateAPIView):
     queryset = Adoption.objects.all()
     filter_backends = [
         filters.SearchFilter,
-        DjangoFilterBackend,
-    ]
-    filterset_fields = [
-        'owner__profile',
     ]
     search_fields = [
         'name',
