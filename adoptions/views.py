@@ -30,8 +30,3 @@ class AdoptionDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = AdoptionSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Adoption.objects.all()
-
-    def get_permissions(self):
-        if self.request.method in permissions.SAFE_METHODS:
-            return [permissions.AllowAny()]
-        return super().get_permissions()
