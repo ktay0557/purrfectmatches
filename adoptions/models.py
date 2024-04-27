@@ -8,7 +8,7 @@ class Adoption(models.Model):
     Adoption model, related to User and Adverts
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    advert = models.ForeignKey(Adverts, on_delete=models.CASCADE)
+    advert_id = models.ForeignKey(Adverts, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=255)
     email = models.EmailField()
@@ -19,4 +19,4 @@ class Adoption(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):
-        return f'{self.owner} {self.advert}'
+        return f'{self.owner} {self.advert_id}'
