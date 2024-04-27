@@ -16,7 +16,6 @@ class AdoptionList(generics.ListCreateAPIView):
         'name',
         'email',
         'mobile',
-        'advert_id',
     ]
 
     def perform_create(self, serializer):
