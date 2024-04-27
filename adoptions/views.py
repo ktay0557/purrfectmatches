@@ -2,7 +2,7 @@ from rest_framework import generics, permissions, filters
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Adoption
 from .serializers import AdoptionSerializer
-from purrfectmatches.permissions import IsOwnerOrReadOnly
+from purrfectmatches.permissions import IsStaffOrReadOnly
 
 
 class AdoptionList(generics.ListCreateAPIView):
@@ -22,7 +22,10 @@ class AdoptionList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
-class AdoptionDetail(generics.RetrieveUpdateDestroyAPIView):
+class AdoptionDetail(generics.RetrieveDestroyAPIView):
+    """
+    Retrieve and delete adoption queries using adoption IDs
+    """
     serializer_class = AdoptionSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [IsStaffOrReadOnly]
     queryset = Adoption.objects.all()
