@@ -16,6 +16,26 @@ A screenshot showing the form staff members can use to advertise current cats.
 
 When a user selects an advert, they are taken to that advert's page, where they can find the comment section.
 
+## Combined Repositories
+
+Whilst the Django Rest Framework and React Frontend were initially created separately, upon completion of the project, they were then unified. 
+This is due to the benefits of creating a single, combined project:
+    - Only one repository is required, and CORS is no longer an issue, due to requests and responses coming from a shared baseURL. 
+    - This is true for both development and production environments.
+
+The combining of the Django Rest Framework and React Frontend was made possible, by cloning the React Frontend into the Django Rest Framework project,
+using the terminal and following command:
+   - git clone <react_repo_url> frontend
+
+The above command created the frontend folder within the Django Rest Framework project, which contains the entirety of the React Frontend project.
+This did mean that some files did need to be removed due to now having multiple copies. These were the React git folder, .gitignore, and the README file. 
+
+## Agile Methodologies
+
+Throughout this project, Agile methodologies were implemented, with each User Story being documention on GitHub, as seen below:
+
+![agile_methodology](documentation/screenshots/agile.png)
+
 ## ERD's
 
 |        Profile      |           |--|  Adverts   |               |           |             
@@ -54,6 +74,24 @@ When a user selects an advert, they are taken to that advert's page, where they 
 | ForeignKey | owner       | User      |
 | ForeignKey | advert      | Adverts   |
 |            | created_at  | DateTime  |
+
+## Reusable Components in React
+
+Reusability and consistency is a big reason to use reusable components in React. Such components were used throughout the project, which are detailed below:
+
+1. NavBar.js: This component is reused in the entire site, to enable a consistent user experience.
+2. Asset.js: This component was reused for the: 
+    - AdoptionsPage to display a No Results image & message, 
+    - AdvertCreateForm to display a default image in the upload image section, 
+    - AdvertPage to display a spinner whilst the page loads more comments, 
+    - AdvertsPage to display a spinner whilst the page loads more adverts, 
+    - ProfilePage to display a spinner whilst the profile details load.
+3. Avatar.js: This component was reused for the Adoption, Comment, and CommentCreateForm pages to display the owners profile picture.
+4. Info.js: This component was reused for the AdoptionPage, AdoptionsPage, AdvertsPage, ProfilePage pages to display information to the user about cats.
+5. MoreDropdown.js: This component was reused for the:
+    - Adoption page to display a dropdown menu for staff to delete fulfilled adoption queries,
+    - Advert and Comment pages to display a dropdown menu for owners to edit and delete the content.
+6. NotFound.js: This component was reused in App.js to display the not found page is a user finds themselves on a page that does not exist.
 
 ## User Experience (UX)
 
