@@ -4,6 +4,9 @@ from likes.models import Likes
 from adoptions.models import Adoption
 
 class AdvertSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Advert model.
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     like_id = serializers.SerializerMethodField()

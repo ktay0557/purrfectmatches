@@ -3,6 +3,10 @@ from rest_framework import serializers
 from .models import Comment
 
 class CommentSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Comment model.
+    Includes extra fields when returning a list of Comment instances 
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
@@ -35,4 +39,9 @@ class CommentSerializer(serializers.ModelSerializer):
         ]
 
 class CommentDetailSerializer(CommentSerializer):
+    """
+    Serializer for the Comment model used in the Detail view.
+    Advert is a read only field, so doesn't need to set it 
+    on each update. 
+    """
     advert = serializers.ReadOnlyField(source='advert.id')

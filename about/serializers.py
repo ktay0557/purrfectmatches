@@ -2,6 +2,10 @@ from rest_framework import serializers
 from .models import About
 
 class AboutSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the About model.
+    Has image validation so an image used will not over fill the page. 
+    """
     def validate_image(self, value):
         if value.size > 1024 * 1024 * 2: # 2MB in bytes
             raise serializers.ValidationError(

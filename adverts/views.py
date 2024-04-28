@@ -8,6 +8,10 @@ from .serializers import AdvertSerializer
 
 
 class AdvertList(generics.ListCreateAPIView):
+    """
+    List adverts, or if staff, can create a advert.
+    The perform_create method associates the advert with the logged in staff member. 
+    """
     serializer_class = AdvertSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Adverts.objects.annotate(

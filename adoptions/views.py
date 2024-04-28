@@ -6,6 +6,10 @@ from purrfectmatches.permissions import IsStaffOrReadOnly
 
 
 class AdoptionList(generics.ListCreateAPIView):
+    """
+    List completed adoption queries,
+    or complete adoption queries if logged in. 
+    """
     serializer_class = AdoptionSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Adoption.objects.all()

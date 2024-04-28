@@ -3,6 +3,11 @@ from .models import Adoption
 from adverts.models import Adverts
 
 class AdoptionSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Adoption model.
+    Uses a PrimaryKeyRelatedField so users can choose the Advert relating
+    relating to the adoption query. 
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     advert_id = serializers.PrimaryKeyRelatedField(queryset=Adverts.objects.all(), write_only=True)
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')

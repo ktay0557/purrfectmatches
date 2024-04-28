@@ -4,6 +4,10 @@ from .models import Likes
 
 
 class LikeSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Like model
+    Create method handles the unique constraint on 'owner' and 'advert' 
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:

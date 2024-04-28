@@ -5,6 +5,9 @@ from .serializers import AboutSerializer
 
 
 class AboutList(generics.ListAPIView):
+    """
+    Show users the most up to date About information. 
+    """
     serializer_class = AboutSerializer
     permission_classes = [IsStaffOrReadOnly]
 
@@ -12,6 +15,9 @@ class AboutList(generics.ListAPIView):
         return About.objects.order_by('-created_at')
 
 class AboutDetail(generics.RetrieveUpdateAPIView):
+    """
+    Allows staff to retrieve and update the About information. 
+    """
     serializer_class = AboutSerializer
     permission_classes = [IsStaffOrReadOnly]
     queryset = About.objects.all()
