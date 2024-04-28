@@ -3,6 +3,8 @@
 [Purrfect Matches](https://purrfect-matches-06bb403f2068.herokuapp.com/)
 
 A fictional cat sanctuary that allows users to view the current in house cats and complete adoption queries in order to hopefully adopt.
+There are around a quarter of a million cats in the UK without a home. As a cat lover, and owner of a rescue, I think it's important to try and help reduce those numbers.
+Whilst this project is fictional, it is my hope that one day, I may be able to make it a reality, and having this application can help to find matches for lost cats and potentially lost humans too. 
 
 ![initial_screen](documentation/screenshots/homepage.png)
 
@@ -92,6 +94,41 @@ Reusability and consistency is a big reason to use reusable components in React.
     - Adoption page to display a dropdown menu for staff to delete fulfilled adoption queries,
     - Advert and Comment pages to display a dropdown menu for owners to edit and delete the content.
 6. NotFound.js: This component was reused in App.js to display the not found page is a user finds themselves on a page that does not exist.
+
+## Wireframes and Design
+
+### Wireframes
+
+At the very beginning of this project, basic wireframes were drawn up to provide a rough guide to how the site would look. 
+These can be seen below:
+
+![main_layout](documentation/wireframes/main_layout.png)
+
+This provides the main layout for the majority of pages. Every page will have the navbar, with a variety of icons depending on user status. 
+The logo will always take the user back to the homepage. There is a search bar and a section for information the relay to the user.
+The main bulk of the pages will be taken up by the content:
+    - For the homepage and liked page, the content will be the adverts.
+    - For the adoptions page, the content will be the completed adoption forms.
+
+![main_form_layout](documentation/wireframes/main_form_layout.png)
+
+This gives an idea as to how the create advert and edit profile forms will look. 
+Again, the navbar is visible to the user, but for these views, the main bulk is a form for details and an area for image upload.
+
+![about_layout](documentation/wireframes/about_layout.png)
+
+This shows that again, the navbar will be visible. However, the only other content on the about page will be the about information.
+
+![adoption_form](documentation/wireframes/adoption_form.png)
+
+This provides a basic structure of the adopt a cat page. As always, the navbar is visible and there is an area for the form that will be available to logged in users to complete for adopting a cat. 
+
+### Design
+
+Google Fonts was used throughout the project, mainly Poppins, with an off-white background colour. 
+This is because this is more accessible to those of us with dyslexia. Knowing there would be a lot of time spent writing and reading on the pages, I wanted to ensure more ease. Being dyslexic myself, made the process a lot more bearable. 
+
+Purple was used for decoration and the buttons, as it compliments the background colour, without being overbearing.
 
 ## User Experience (UX)
 
