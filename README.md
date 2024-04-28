@@ -259,13 +259,56 @@ Also, with more time, I would like to create a usable admin page to enable staff
 
 ### GitHub
 
+#### Forking the GitHub Repository
+
+By forking the GitHub Repository, a copy can be created. This allows for viewing and editing, without affecting the original. The following steps show how:
+
+    1. Log into GitHub, locate the GitHub Repository.
+    2. "Fork" is towards the top of the page, select it.
+    3. This provides a copy of the original repository.
+
+#### Making a Local Clone
+
+    1. Start by logging into GitHub.
+    2. Locate the required GitHub Repository.
+    3. Click the "<> Code" dropdown option.
+    4. The link can be copied and cloned.
+
+
 ### Heroku
 
+The site was deployed to Heroku using the following steps:
+
+    1. Log in or create an account at heroku.com.
+    2. Click "New" in the top right of the page.
+    3. Select the "Create new app" option from the dropdown.
+    4. Enter the app name, it must be unique.
+    5. Select the Region and click "Create app".
+    6. From the newly created app page, navigate to the Settings tab.
+    7. Click "Reveal config vars", and add any necessary config vars.
+    8. Navigate to the Deploy tab and scroll down to the "Connect to GitHub" option.
+    9. Sign in and authorize when prompted to do so.
+    10. Find the repository to deploy and click "Connect"
+    11. Scroll down to the Manual deploy option and choose the main branch.
+    12. Click "Deploy Branch", and once it has finished deploying, the "View" button can be selected to view the live site.
 
 ## Credits
 
 ### Code
 
+- Code Institute: Without them and the fantastic walkthrough projects, I would be a lot more lost. They lessons and expertise have been absolutely essential. 
+- Stack Overflow: Helped me gain an understanding of new concepts and implementing new ideas.
+- Slack: Provided me with ideas of where to go for answers.
+- https://github.com/MichelleBritton/fabfurryfriends/blob/3611858db311b8c365dc63d9b992651ca6431eea/fabfurryfriends/serializers.py - for help with staff permissions
+
 ### Content
 
+- All content was written by the developer, with the help of Code Institute, except for where stated. 
+- All media was courtesy of the developer and Lolly Stone, who kindly provided many photographs of their cats.
+
 ### Acknowledgements
+
+- Kevin, as always. I would not have got this far without him. Making sure to sit on my keyboard and delete sections of code when it was time for a break. 
+- My tutor from the Code Institute, Daisy, who was a massive help in tackling some of the issues I stumbled across. 
+- Code Institute, for their fantastic, manageable lessons, which have taught me so much this last year.
+- Abi, for allowing me to bounce ideas off of, and rant when things weren't going right. 
