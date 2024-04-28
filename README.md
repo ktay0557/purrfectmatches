@@ -94,19 +94,71 @@ When a user selects an advert, they are taken to that advert's page, where they 
 
 ### Languages Used
 
+- HTML
 
+- CSS
+
+- JavaScript
+
+- Python
 
 ### Frameworks, Libraries, and Programs Used
 
-
-
+1. GitHub:
+   - GitHub is used to store the project codes after being pushed from Gitpod.
+2. Git:
+   - Git is used for version control, to enable commits to Git and the ability to Push to GitHub.
+3. Google Fonts:
+   - Google Fonts was used throughout the website, for aesthetic purposes in regards to the text.
+4. Django (including extensions):
+   - dj-database-url enables utilization of the 12factor inspired DATABASE_URL environment variable to configure the Django application.
+   - dj-rest-auth is for handling RESTful authentication.
+   - Django is the web framework used for building the project.
+   - Django Allauth: Used for authentication and account management.
+   - Django Cloudinary Storage is Django storage for Cloudinary.
+   - Django Filter is used to allow users to filter queryset dynamically.
+   - Django REST Framework is a powerful and flexible toolkit for building Web APIs.
+   - Django REST Framework Simplejwt: JSON Web Token (JWT) authentication for Django REST Framework.
+5. Cloudinary:
+   - Cloudinary is used for managing and serving images.
+6. Gunicorn:
+   - Gunicorn is used as the WSGI server for the Django application.
+7. Bootstrap:
+   - Bootstrap is a front-end framework used for designing and styling the user interface.
+8. Pillow:
+   - Python Imaging Library.
+9. React (including extensions):
+   - React-DOM provides DOM-specific methods that can be used at the top level of the app.
+   - React-Bootstrap provides pre-built React components for Bootstrap.
+   - React-Router-DOM provides routing capabilities for React applications.
+   - React-Toastify is a library for displaying toast notifications in React apps.
+   - React-Infinite-Scroll allows infinite scrolling by users.
+10. JWT-decode:
+   - Library for decoding JSON Web Tokens in JavaScript
+11. Axios:
+   - Promise-based HTTP client for making asynchronous requests in JavaScript
 
 ## Testing
 
 ### Validating the Code
 
+index.html has HTML code and when checked, by going to the page and right-clicking for the 'View page source' option to copy the code,
+to then paste as 'text input, it was clear of errors in the W3C Markup validator.
+
+![HTML Validator](documentation/validation/html_validation.png)
+
+The W3C CSS Validator was used to check the CSS code, there were no errors found.
+
+![CSS Validator](documentation/validation/css_validation.png)
+
+JavaScript was validated using the terminal and built in linter with the Create React App. There were no errors found.
+
+The Code Institute PEP8 Python Linter was used to check the main code for the application. Five errors were reported for lines
+being too long. They were altered and the errors fixed. 
 
 ### Manual Testing using User Stories from UX Section
+
+Manual testing was carried out every step of the way. Everytime a piece of code was written, it was tested before being committed and pushed to Git.
 
 ### Automated Testing
 
