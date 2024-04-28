@@ -12,5 +12,10 @@ class CurrentUserSerializer(UserDetailsSerializer):
             'profile_id', 'profile_image', 'is_staff_user'
         )
 
+    """
+    credit: https://github.com/MichelleBritton/fabfurryfriends/
+    blob/3611858db311b8c365dc63d9b992651ca6431eea/fabfurryfriends/serializers.py#L20
+    """
+
     def get_is_staff_user(self, obj):
         return obj.is_staff  # this will return true for self.is_staff user
